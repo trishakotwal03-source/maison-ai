@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme {
+  --color-linen: #F7F2EC;
+  --color-champagne: #F4EBDD;
+  --color-almond: #E9DDCF;
+  --color-cloudy: #DCE4E8;
+  --color-dusty: #CBD8E6;
+  --color-espresso: #3B2A24;
+  --color-taupe: #64574E;
+  --color-slateblue: #596774;
+  --color-mocha: #6C5143;
+  --color-charcoal: #2F3438;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-linen);
+    color: var(--color-espresso);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+
+  .glass-dark {
+    background: rgba(59, 42, 36, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(59, 42, 36, 0.1);
+  }
+
+  .shadow-luxe {
+    box-shadow: 0 10px 40px -10px rgba(59, 42, 36, 0.15),
+                0 4px 16px -4px rgba(59, 42, 36, 0.08);
+  }
+
+  .shadow-luxe-lg {
+    box-shadow: 0 30px 80px -20px rgba(59, 42, 36, 0.25),
+                0 10px 30px -10px rgba(59, 42, 36, 0.12);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.2) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 12s ease infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 87, 78, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 87, 78, 0.5);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(100, 87, 78, 0.2);
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-espresso);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(59, 42, 36, 0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-espresso);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(59, 42, 36, 0.3);
+}
