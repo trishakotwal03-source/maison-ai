@@ -8,7 +8,6 @@
     "VITE_GOOGLE_AUTH_PROXY": "https://designarena.ai/auth/google/callback",
     "FULLSTACK_PROJECT_REF": "bqtfimkncxmrortmewnt",
     "FULLSTACK_RESTORE_API_URL": "https://designarena.ai/api/fullstack-restore",
-    "GEMINI_API_KEY": "@GEMINI_API_KEY",
     "GEMINI_MODEL": "gemini-2.5-flash"
   }
 }
